@@ -34,7 +34,6 @@ public static class TimeTools
 npx @modelcontextprotocol/inspector dotnet run --project ./MCPServer.Console/MCPServer.Console.csproj
 http://127.0.0.1:6274
 
-
 Visual Studio Code - 設定 - MCP - settings.json で編集
 
 "servers": {
@@ -44,7 +43,7 @@ Visual Studio Code - 設定 - MCP - settings.json で編集
         "args": [
             "run",
             "--project",
-            "C:\\DropBox\\Dropbox\\202505.Microsoft BUILD\\Source\\MCPSample\\MCPServer.Console\\MCPServer.Console.csproj"
+            "C:\\[プロジェクト フォルダー]\\MCPServer.Console.csproj"
         ]
     }
 }

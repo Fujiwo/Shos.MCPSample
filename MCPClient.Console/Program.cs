@@ -5,7 +5,7 @@ var clientTransport = new SseClientTransport(new SseClientTransportOptions { End
 IMcpClient client = await McpClientFactory.CreateAsync(clientTransport)
                                           .ConfigureAwait(false);
 
-await Run(client, new Dictionary<string, object?> { ["location"] = "東京" });
+await Run(client, new Dictionary<string, object?> { ["location"] = "福井県" });
 
 Console.ReadKey();
 
@@ -26,10 +26,8 @@ async Task Run(IMcpClient client, IReadOnlyDictionary<string, object?>? argument
     // ツールの一覧からツールを取得
     foreach (var tool in await client.ListToolsAsync()) {
         Console.WriteLine($"{tool.Name} ({tool.Description})");
-
         // ツールを実行
         var response = await client.CallToolAsync(tool.Name, arguments);
-
         // レスポンスを表示
         foreach (var content in response.Content)
             Console.WriteLine($"tool.Name: {tool.Name}, content.Type: {content.Type}, content.Text: {content.Text}");
